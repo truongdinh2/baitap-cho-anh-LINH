@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="div1"></div>
+  <script>
+    function chuyen(n, cot1, cot2, cot3) {
+      var result;
+      if (n === 1) {
+        result = cot1 + " chuyen sang " + cot3 + "<br>";
+      } else {
+        result = [
+          chuyen(n - 1, cot1, cot3, cot2),
+          chuyen(1, cot1, cot2, cot3),
+          chuyen(n - 1, cot2, cot1, cot3)
+        ]
+      }
+      return result;
+    }
+    var sum = chuyen("3", "a", "b", "c");
+    document.getElementById('div1').innerHTML = sum;
+  </script>
+</body>
+</html>
